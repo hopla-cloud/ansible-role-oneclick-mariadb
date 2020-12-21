@@ -19,6 +19,7 @@
     password: "{{ db_root_password }}"
     login_user: root
     login_password: "{{ db_root_password }}"
+    priv: '*.*:ALL,GRANT'
     state: present
 
 - name: Log variables to file
