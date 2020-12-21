@@ -12,6 +12,15 @@
     state: restarted
     name: ssh
 
+- name: Set root user password
+  mysql_user:
+    name: root
+    host_all : yes
+    password: "{{ db_root_password }}"
+    login_user: root
+    login_password: "{{ db_root_password }}"
+    state: present
+
 - name: Log variables to file
   template:
     src: logs.j2
